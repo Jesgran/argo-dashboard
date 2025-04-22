@@ -11,7 +11,7 @@ export const ClientContext = createContext(
 	{} as { client: WebClient; state: State; setState: (state: State) => void }
 );
 const MayNeedLogin = dynamic(() => import("./MayNeedLogin"));
-const client = new WebClient();
+const client = new WebClient({ version: "1.27.0" });
 
 const ClientProvider = ({ children }: { children: React.ReactNode }) => {
 	const [state, setState] = useState(State.FirstLoading);
